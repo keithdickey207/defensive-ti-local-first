@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "description": "Local defensive signatures only — never fetched remotely",
+  "signatures": [
+    {
+      "id": "sig-ps-encoded",
+      "name": "PowerShell encoded command",
+      "pattern": "(?i)powershell.*(encodedcommand|frombase64string|-enc\\b)",
+      "severity": "high",
+      "category": "execution"
+    },
+    {
+      "id": "sig-c2-beacon",
+      "name": "C2 beacon language",
+      "pattern": "(?i)\\b(beacon|callback|c2|command.?and.?control)\\b",
+      "severity": "medium",
+      "category": "c2"
+    },
+    {
+      "id": "sig-suspicious-port",
+      "name": "Common reverse-shell ports",
+      "pattern": "(?i):(?:4444|5555|6666|1337|31337)\\b",
+      "severity": "medium",
+      "category": "network"
+    },
+    {
+      "id": "sig-mimikatz",
+      "name": "Credential dumping keyword",
+      "pattern": "(?i)\\b(mimikatz|sekurlsa|lsadump|procdump)\\b",
+      "severity": "high",
+      "category": "credential_access"
+    },
+    {
+      "id": "sig-web-shell",
+      "name": "Web shell indicators",
+      "pattern": "(?i)(eval\\s*\\(|base64_decode|passthru|shell_exec|cmd\\.exe\\s+/c)",
+      "severity": "high",
+      "category": "persistence"
+    }
+  ]
+}
