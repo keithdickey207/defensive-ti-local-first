@@ -1,0 +1,5 @@
+# Zero required third-party packages for the core pipeline.
+# Python 3.10+ standard library only.
+#
+# Optional (for ChromaDB RAG loader — install only if you want it):
+# chromadb>=0.4.0
